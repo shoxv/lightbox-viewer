@@ -1,0 +1,40 @@
+
+<!doctype html>
+<html class="no-js" lang="">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Lightbox Viewer</title>
+    <meta name="description" content="Lightbox viewer for viewing images from Flickr API">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="styles/reset.css">
+    <link rel="stylesheet" href="styles/styles.css">
+  </head>
+  <body>
+    <!--[if lte IE 9]> <p> Please use Internet explorer 9 or greater to view this site properly. </p> <![endif]-->
+    <header>
+      <form class="search-form">
+        <input class="search-input" type="text" name="search" placeholder="Enter a topic!">
+        <button type="submit"> <span class="button-text"> Search </span> <i class="loader"></i></button>
+      </form>
+    </header>
+    <div class="search-results-container">
+      <!-- Search results render here -->
+    </div>
+    <div class="lightbox-modal-container">
+      <div class="lightbox-modal-overlay"></div>
+      <div class="lightbox-modal" tabindex="-1">
+        <button class="modal-close" type="button"> X </button>
+        <div class="modal-header">
+        </div>
+        <div class="modal-body">
+          <img class="modal-image" src="" alt="image" />
+          <button class="modal-next" type="button"> &gt; </button>
+          <button class="modal-prev" type="button"> &lt; </button>
+        </div>
+      </div>
+    </div>
+    <script src="scripts/main.js"></script>
+  </body>
+</html>

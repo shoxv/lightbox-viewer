@@ -1,0 +1,23 @@
+{
+  "name": "lightbox-viewer",
+  "version": "1.0.0",
+  "description": "A simple image viewer connected to flickr",
+  "scripts": {
+    "start": "node index.js",
+    "test": ""
+  },
+  "engines": {
+    "node": ">=4"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/shoxv/lightbox-viewer"
+  },
+  "author": "Saif Ebrahim",
+  "license": "ISC",
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^3.2.0",
+    "semistandard": "*"
+  }
+}
