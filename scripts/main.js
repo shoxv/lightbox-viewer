@@ -86,7 +86,7 @@ var App = (function () {
       _renderNoResults();
     } else {
       data.response = response; // Cache response
-      photos.map( function (item, i) {
+      photos.map(function (item, i) {
         // Use map for closure to properly attach onload events.
 
         var element, img;
@@ -131,7 +131,7 @@ var App = (function () {
    *          stepBackward - Goes to previous image
    */
 
-  var Modal = ( function () {
+  var Modal = (function () {
     var modal = data.modal;
     var modalContainer = modal.parentElement;
     var modalOverlay = modalContainer.querySelector('.lightbox-modal-overlay');
@@ -141,10 +141,10 @@ var App = (function () {
     var modalPrev = modal.querySelector('.modal-prev');
     var modalClose = modal.querySelector('.modal-close');
     var keyCodes = {
-          esc: 27,
-          right: 39,
-          left: 37
-        };
+      esc: 27,
+      right: 39,
+      left: 37
+    };
 
     function init () {
       _bindEvents();
@@ -176,7 +176,6 @@ var App = (function () {
             break;
         }
       }
-
     }
 
     function _updateModal (item) {
@@ -196,9 +195,9 @@ var App = (function () {
     }
 
     function stepForward () {
-      var photos = data.response.photos.photo,
-          index = parseInt(modalImg.dataset.index, 10),
-          newIndex = index + 1 < photos.length ? index + 1 : 0; // If at last item, start over at 0
+      var photos = data.response.photos.photo;
+      var index = parseInt(modalImg.dataset.index, 10);
+      var newIndex = index + 1 < photos.length ? index + 1 : 0; // If at last item, start over at 0
 
       _updateModal(photos[newIndex]);
     }
@@ -234,7 +233,7 @@ var App = (function () {
     }
 
     var method = 'GET';
-    var xhr = new XMLHttpRequest();
+    var xhr = new window.XMLHttpRequest();
     var async = true;
 
     xhr.open(method, url, async);
@@ -249,7 +248,7 @@ var App = (function () {
           error: xhr.statusText
         });
       }
-    }
+    };
     xhr.onerror = errorCallback;
     xhr.send();
   }
@@ -259,9 +258,9 @@ var App = (function () {
    * Takes an object and serializes it into a query string.
    */
 
-   function parameterize (object) {
+  function parameterize (object) {
     return Object.keys(object).map(function (item) {
-      return item + '=' + object[item]
+      return item + '=' + object[item];
     }).join('&');
   }
 
@@ -269,8 +268,7 @@ var App = (function () {
     init: init,
     Modal: Modal,
     getJSON: getJSON
-  }
-
+  };
 })();
 
 document.addEventListener('DOMContentLoaded', App.init);

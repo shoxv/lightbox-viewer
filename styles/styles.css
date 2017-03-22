@@ -241,7 +241,7 @@ body {
 
 /*
  * Media Queries
- * MQs are based on content, rather than 'phone/tablet' etc. That makes the site more fluid and adaptable to any device.
+ * MQs based on content rather than 'phone/tablet' etc. That makes the site more fluid and adaptable to any device.
  */
 
 @media (max-width: 640px) {
