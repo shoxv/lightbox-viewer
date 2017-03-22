@@ -68,6 +68,10 @@ body {
   display: block;
 }
 
+.search-form.loading {
+  pointer-events: none; /* Disable button being pressed while loading */
+}
+
 .search-form.loading .button-text {
   display: none;
 }
@@ -76,6 +80,7 @@ body {
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
+  margin-top: 20px;
 }
 
 .search-results-container > div {
@@ -83,6 +88,7 @@ body {
 }
 
 .search-results-container .result-thumb {
+  width: 150px;
   cursor: pointer;
   opacity: 1;
   transition: opacity 1s;
@@ -143,18 +149,19 @@ body {
 
 .lightbox-modal .modal-close {
   top: 8px;
-  right: 5px;
+  right: 8px;
+  width: 20px;
+  height: 20px;
   position: absolute;
   border: none;
-  background-color: #11a8ab;
-  border-radius: 50%;
+  background-color: rgba(0,0,0,.3);
   color: #fff;
   cursor: pointer;
   transition: .3s;
 }
 
 .lightbox-modal .modal-close:hover {
-  background-color: #4ce9ec;
+  background-color: rgba(0,0,0,.5);
 }
 
 .lightbox-modal .modal-next,
@@ -259,5 +266,33 @@ body {
 
   .search-results-container > div {
     margin: 15px;
+  }
+
+  .lightbox-modal {
+    padding-left: 0;
+    padding-right: 0;
+    width: 95vw;
+    max-width: 95vw;
+  }
+
+  .lightbox-modal .modal-body {
+    padding-bottom: 35px;
+    position: initial;
+  }
+
+  .lightbox-modal .modal-next,
+  .lightbox-modal .modal-prev {
+    width: 35px;
+    height: 35px;
+    bottom: 8px;
+    top: initial;
+  }
+
+  .lightbox-modal .modal-next {
+    right: 8px;
+  }
+
+  .lightbox-modal .modal-prev {
+    left: 8px;
   }
 }

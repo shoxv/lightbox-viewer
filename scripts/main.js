@@ -91,7 +91,7 @@ var App = (function () {
 
         var element, img;
 
-        // Shim API response here to save looping through object again.
+        // Shim API response here to avoid looping through object again.
 
         item.thumbSrc = _createFlickrLink(item, 'thumb');
         item.src = _createFlickrLink(item);
@@ -197,7 +197,7 @@ var App = (function () {
     function stepForward () {
       var photos = data.response.photos.photo;
       var index = parseInt(modalImg.dataset.index, 10);
-      var newIndex = index + 1 < photos.length ? index + 1 : 0; // If at last item, start over at 0
+      var newIndex = index + 1 < photos.length ? index + 1 : 0; // If at last item, start over at 0.
 
       _updateModal(photos[newIndex]);
     }
@@ -205,7 +205,7 @@ var App = (function () {
     function stepBackward () {
       var photos = data.response.photos.photo;
       var index = parseInt(modalImg.dataset.index, 10);
-      var newIndex = index - 1 < 0 ? photos.length - 1 : index - 1; // If at first item, start at last
+      var newIndex = index - 1 < 0 ? photos.length - 1 : index - 1; // If at first item, start at last.
 
       _updateModal(photos[newIndex]);
     }
